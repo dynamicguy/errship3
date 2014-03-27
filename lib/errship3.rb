@@ -35,7 +35,7 @@ module Errship3
     # A blank page with just the layout and flash message, which can be redirected to when
     # all else fails.
     def errship3_standard(errship3_scope = false)
-      flash[:error] ||= 'An unknown error has occurred, or you have reached this page by mistake.'
+      flash[:error] ||= I18n.t('errship3.standard')
       render :template => '/errship3/standard', :locals => {
         :status_code => 500, :errship3_scope => errship3_scope }
     end
